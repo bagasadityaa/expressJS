@@ -2,10 +2,14 @@ const express = require('express')
 const app = express()
 const port = 3000
 const bodyParser = require('body-parser')
+const db = require('./connection')
 
 app.use(bodyParser.json())
 // route utama 
 app.get('/', (req, res)=>{
+    db.query("SELECT * FROM mahasiswa",()=>{
+        
+    })
     res.send('Hello World YUtama asas')
 })
 app.get('/hello', (req, res)=>{
